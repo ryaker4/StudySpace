@@ -1,0 +1,85 @@
+\hypertarget{route__cipher_8cpp}{}\doxysection{Файл route\+\_\+cipher.\+cpp}
+\label{route__cipher_8cpp}\index{route\_cipher.cpp@{route\_cipher.cpp}}
+
+
+Файл реализации модуля шифрования методом табличной маршрутной перестановки  
+
+
+{\ttfamily \#include \char`\"{}route\+\_\+cipher.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cwctype$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$locale$>$}\newline
+Граф включаемых заголовочных файлов для route\+\_\+cipher.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{route__cipher_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+wchar\+\_\+t \mbox{\hyperlink{route__cipher_8cpp_aeda87a6ba757aa35aea0cffc48a9e173}{to\+Upper\+Russian}} (wchar\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em Преобразует русскую строчную букву в прописную \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{route__cipher_8cpp_a423cd85199da0e9d938ec85a5a1f4acc}{is\+Russian\+Letter}} (wchar\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли символ русской буквой \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Файл реализации модуля шифрования методом табличной маршрутной перестановки 
+
+\begin{DoxyAuthor}{Автор}
+РЯбов Кирилл 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Версия}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Дата}
+02.\+12.\+2025г. 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Авторство}
+ИБСТ ПГУ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{route__cipher_8cpp_a423cd85199da0e9d938ec85a5a1f4acc}\label{route__cipher_8cpp_a423cd85199da0e9d938ec85a5a1f4acc}} 
+\index{route\_cipher.cpp@{route\_cipher.cpp}!isRussianLetter@{isRussianLetter}}
+\index{isRussianLetter@{isRussianLetter}!route\_cipher.cpp@{route\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{isRussianLetter()}{isRussianLetter()}}
+{\footnotesize\ttfamily bool is\+Russian\+Letter (\begin{DoxyParamCaption}\item[{wchar\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли символ русской буквой 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em c} & Символ для проверки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если символ является русской буквой (прописной или строчной, включая Ё/ё), false в противном случае 
+\end{DoxyReturn}
+\mbox{\Hypertarget{route__cipher_8cpp_aeda87a6ba757aa35aea0cffc48a9e173}\label{route__cipher_8cpp_aeda87a6ba757aa35aea0cffc48a9e173}} 
+\index{route\_cipher.cpp@{route\_cipher.cpp}!toUpperRussian@{toUpperRussian}}
+\index{toUpperRussian@{toUpperRussian}!route\_cipher.cpp@{route\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{toUpperRussian()}{toUpperRussian()}}
+{\footnotesize\ttfamily wchar\+\_\+t to\+Upper\+Russian (\begin{DoxyParamCaption}\item[{wchar\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+Преобразует русскую строчную букву в прописную 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em c} & Символ для преобразования \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Прописной символ или исходный символ, если он не является русской строчной буквой 
+\end{DoxyReturn}

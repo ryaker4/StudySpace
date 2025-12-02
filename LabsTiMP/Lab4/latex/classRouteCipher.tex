@@ -1,0 +1,157 @@
+\hypertarget{classRouteCipher}{}\doxysection{Класс Route\+Cipher}
+\label{classRouteCipher}\index{RouteCipher@{RouteCipher}}
+
+
+Класс для шифрования методом табличной маршрутной перестановки  
+
+
+
+
+{\ttfamily \#include $<$route\+\_\+cipher.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRouteCipher_a03367d14dcb61fcdbb6a26d83793531c}{Route\+Cipher}} (int cols)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \mbox{\hyperlink{classRouteCipher}{Route\+Cipher}}. \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{classRouteCipher_ababf46a53a39ce2a2c8e65ebd2b9e7c7}{encrypt}} (const std\+::wstring \&text)
+\begin{DoxyCompactList}\small\item\em Метод для зашифрования текста \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{classRouteCipher_a591ab5e4b3364b696158a5d2dd9ffddf}{decrypt}} (const std\+::wstring \&cipher\+Text)
+\begin{DoxyCompactList}\small\item\em Метод для расшифрования текста \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRouteCipher_a9b58871c187309f4defabc3d9bc86ad5}\label{classRouteCipher_a9b58871c187309f4defabc3d9bc86ad5}} 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Количество столбцов таблицы (ключ шифрования) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для шифрования методом табличной маршрутной перестановки 
+
+Реализует шифр табличной маршрутной перестановки для русского текста. Ключом является количество столбцов таблицы. Маршрут записи\+: по горизонтали слева направо, сверху вниз. Маршрут считывания\+: сверху вниз, справа налево. \begin{DoxyWarning}{Предупреждения}
+Реализация поддерживает только русские буквы и пробелы 
+\end{DoxyWarning}
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classRouteCipher_a03367d14dcb61fcdbb6a26d83793531c}\label{classRouteCipher_a03367d14dcb61fcdbb6a26d83793531c}} 
+\index{RouteCipher@{RouteCipher}!RouteCipher@{RouteCipher}}
+\index{RouteCipher@{RouteCipher}!RouteCipher@{RouteCipher}}
+\doxysubsubsection{\texorpdfstring{RouteCipher()}{RouteCipher()}}
+{\footnotesize\ttfamily Route\+Cipher\+::\+Route\+Cipher (\begin{DoxyParamCaption}\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Конструктор класса \mbox{\hyperlink{classRouteCipher}{Route\+Cipher}}. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em cols} & Количество столбцов таблицы (должно быть положительным числом) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classcipher__error}{cipher\+\_\+error}}} & Если количество столбцов меньше или равно 0\\
+\hline
+\end{DoxyExceptions}
+Инициализирует количество столбцов таблицы и проверяет корректность ключа 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em cols} & Количество столбцов таблицы \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classcipher__error}{cipher\+\_\+error}}} & Если количество столбцов меньше или равно 0 \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classRouteCipher_a591ab5e4b3364b696158a5d2dd9ffddf}\label{classRouteCipher_a591ab5e4b3364b696158a5d2dd9ffddf}} 
+\index{RouteCipher@{RouteCipher}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!RouteCipher@{RouteCipher}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily std\+::wstring Route\+Cipher\+::decrypt (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{cipher\+Text }\end{DoxyParamCaption})}
+
+
+
+Метод для расшифрования текста 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em cipher\+Text} & Зашифрованный текст (только русские прописные буквы) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Расшифрованная строка (русские прописные буквы) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classcipher__error}{cipher\+\_\+error}}} & Если зашифрованный текст пустой, содержит недопустимые символы или возникла ошибка при расшифровании\\
+\hline
+\end{DoxyExceptions}
+Реализует обратный алгоритм табличной маршрутной перестановки\+:
+\begin{DoxyEnumerate}
+\item Заполнение таблицы зашифрованным текстом по маршруту чтения
+\item Чтение таблицы по строкам слева направо 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em cipher\+Text} & Зашифрованный текст \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Расшифрованная строка 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classcipher__error}{cipher\+\_\+error}}} & Если зашифрованный текст пустой, содержит недопустимые символы или возникла ошибка при расшифровании \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{classRouteCipher_ababf46a53a39ce2a2c8e65ebd2b9e7c7}\label{classRouteCipher_ababf46a53a39ce2a2c8e65ebd2b9e7c7}} 
+\index{RouteCipher@{RouteCipher}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!RouteCipher@{RouteCipher}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily std\+::wstring Route\+Cipher\+::encrypt (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{text }\end{DoxyParamCaption})}
+
+
+
+Метод для зашифрования текста 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em text} & Текст для зашифрования. Может содержать русские буквы и пробелы. Строчные буквы автоматически преобразуются в прописные. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Зашифрованная строка (только русские прописные буквы) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classcipher__error}{cipher\+\_\+error}}} & Если текст пустой, не содержит русских букв или содержит недопустимые символы\\
+\hline
+\end{DoxyExceptions}
+Реализует алгоритм табличной маршрутной перестановки\+:
+\begin{DoxyEnumerate}
+\item Удаление пробелов и преобразование к прописным буквам
+\item Заполнение таблицы по горизонтали слева направо, сверху вниз
+\item Чтение таблицы по маршруту\+: сверху вниз, справа налево 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em text} & Текст для зашифрования \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Зашифрованная строка 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classcipher__error}{cipher\+\_\+error}}} & Если текст пустой, не содержит русских букв или содержит недопустимые символы \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyEnumerate}
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{route__cipher_8h}{route\+\_\+cipher.\+h}}\item 
+\mbox{\hyperlink{route__cipher_8cpp}{route\+\_\+cipher.\+cpp}}\end{DoxyCompactItemize}

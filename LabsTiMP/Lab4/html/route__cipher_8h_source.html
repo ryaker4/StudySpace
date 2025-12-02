@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Route Cipher: Исходный файл route_cipher.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Route Cipher<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">route_cipher.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="route__cipher_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classRouteCipher.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classRouteCipher.html">RouteCipher</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classRouteCipher.html#a9b58871c187309f4defabc3d9bc86ad5">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classRouteCipher.html#a9b58871c187309f4defabc3d9bc86ad5">columns</a>; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="classRouteCipher.html#a03367d14dcb61fcdbb6a26d83793531c">RouteCipher</a>(<span class="keywordtype">int</span> cols);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::wstring <a class="code hl_function" href="classRouteCipher.html#ababf46a53a39ce2a2c8e65ebd2b9e7c7">encrypt</a>(<span class="keyword">const</span> std::wstring&amp; text);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::wstring <a class="code hl_function" href="classRouteCipher.html#a591ab5e4b3364b696158a5d2dd9ffddf">decrypt</a>(<span class="keyword">const</span> std::wstring&amp; cipherText);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classcipher__error.html">   59</a></span><span class="keyword">class </span><a class="code hl_class" href="classcipher__error.html">cipher_error</a> : <span class="keyword">public</span> std::invalid_argument {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classcipher__error.html#a13e1ac7d1046526a837fdacdfd2f80af">   65</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classcipher__error.html#a13e1ac7d1046526a837fdacdfd2f80af">cipher_error</a>(<span class="keyword">const</span> std::string&amp; message) </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        : std::invalid_argument(message) {}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+<div class="ttc" id="aclassRouteCipher_html"><div class="ttname"><a href="classRouteCipher.html">RouteCipher</a></div><div class="ttdoc">Класс для шифрования методом табличной маршрутной перестановки</div><div class="ttdef"><b>Definition:</b> route_cipher.h:25</div></div>
+<div class="ttc" id="aclassRouteCipher_html_a03367d14dcb61fcdbb6a26d83793531c"><div class="ttname"><a href="classRouteCipher.html#a03367d14dcb61fcdbb6a26d83793531c">RouteCipher::RouteCipher</a></div><div class="ttdeci">RouteCipher(int cols)</div><div class="ttdoc">Конструктор класса RouteCipher.</div><div class="ttdef"><b>Definition:</b> route_cipher.cpp:62</div></div>
+<div class="ttc" id="aclassRouteCipher_html_a591ab5e4b3364b696158a5d2dd9ffddf"><div class="ttname"><a href="classRouteCipher.html#a591ab5e4b3364b696158a5d2dd9ffddf">RouteCipher::decrypt</a></div><div class="ttdeci">std::wstring decrypt(const std::wstring &amp;cipherText)</div><div class="ttdoc">Метод для расшифрования текста</div><div class="ttdef"><b>Definition:</b> route_cipher.cpp:166</div></div>
+<div class="ttc" id="aclassRouteCipher_html_a9b58871c187309f4defabc3d9bc86ad5"><div class="ttname"><a href="classRouteCipher.html#a9b58871c187309f4defabc3d9bc86ad5">RouteCipher::columns</a></div><div class="ttdeci">int columns</div><div class="ttdoc">Количество столбцов таблицы (ключ шифрования)</div><div class="ttdef"><b>Definition:</b> route_cipher.h:27</div></div>
+<div class="ttc" id="aclassRouteCipher_html_ababf46a53a39ce2a2c8e65ebd2b9e7c7"><div class="ttname"><a href="classRouteCipher.html#ababf46a53a39ce2a2c8e65ebd2b9e7c7">RouteCipher::encrypt</a></div><div class="ttdeci">std::wstring encrypt(const std::wstring &amp;text)</div><div class="ttdoc">Метод для зашифрования текста</div><div class="ttdef"><b>Definition:</b> route_cipher.cpp:79</div></div>
+<div class="ttc" id="aclasscipher__error_html"><div class="ttname"><a href="classcipher__error.html">cipher_error</a></div><div class="ttdoc">Класс исключения для ошибок шифрования</div><div class="ttdef"><b>Definition:</b> route_cipher.h:59</div></div>
+<div class="ttc" id="aclasscipher__error_html_a13e1ac7d1046526a837fdacdfd2f80af"><div class="ttname"><a href="classcipher__error.html#a13e1ac7d1046526a837fdacdfd2f80af">cipher_error::cipher_error</a></div><div class="ttdeci">cipher_error(const std::string &amp;message)</div><div class="ttdoc">Конструктор класса cipher_error.</div><div class="ttdef"><b>Definition:</b> route_cipher.h:65</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

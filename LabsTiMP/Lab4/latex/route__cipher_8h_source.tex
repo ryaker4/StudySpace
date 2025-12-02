@@ -1,0 +1,24 @@
+\hypertarget{route__cipher_8h_source}{}\doxysection{route\+\_\+cipher.\+h}
+\mbox{\hyperlink{route__cipher_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classRouteCipher}{RouteCipher}} \{}
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{classRouteCipher_a9b58871c187309f4defabc3d9bc86ad5}{columns}}; }
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{classRouteCipher_a03367d14dcb61fcdbb6a26d83793531c}{RouteCipher}}(\textcolor{keywordtype}{int} cols);}
+\DoxyCodeLine{43     std::wstring \mbox{\hyperlink{classRouteCipher_ababf46a53a39ce2a2c8e65ebd2b9e7c7}{encrypt}}(\textcolor{keyword}{const} std::wstring\& text);}
+\DoxyCodeLine{51     std::wstring \mbox{\hyperlink{classRouteCipher_a591ab5e4b3364b696158a5d2dd9ffddf}{decrypt}}(\textcolor{keyword}{const} std::wstring\& cipherText);}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classcipher__error}{cipher\_error}} : \textcolor{keyword}{public} std::invalid\_argument \{}
+\DoxyCodeLine{60 \textcolor{keyword}{public}:}
+\DoxyCodeLine{65     \textcolor{keyword}{explicit} \mbox{\hyperlink{classcipher__error_a13e1ac7d1046526a837fdacdfd2f80af}{cipher\_error}}(\textcolor{keyword}{const} std::string\& message) }
+\DoxyCodeLine{66         : std::invalid\_argument(message) \{\}}
+\DoxyCodeLine{67 \};}
+
+\end{DoxyCode}

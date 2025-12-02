@@ -1,3 +1,12 @@
+/**
+ * @file route_cipher.cpp
+ * @brief Файл реализации модуля шифрования методом табличной маршрутной перестановки
+ * @author РЯбов Кирилл
+ * @version 1.0
+ * @date 02.12.2025г.
+ * @copyright ИБСТ ПГУ
+ */
+
 #include "route_cipher.h"
 #include <string>
 #include <vector>
@@ -5,6 +14,12 @@
 #include <cwctype>
 #include <stdexcept>
 #include <locale>
+
+/**
+ * @brief Преобразует русскую строчную букву в прописную
+ * @param[in] c Символ для преобразования
+ * @return Прописной символ или исходный символ, если он не является русской строчной буквой
+ */
 wchar_t toUpperRussian(wchar_t c) {
     if (c >= L'а' && c <= L'п') {
         return c - (L'а' - L'А');
@@ -19,6 +34,13 @@ wchar_t toUpperRussian(wchar_t c) {
     
     return c;
 }
+
+/**
+ * @brief Проверяет, является ли символ русской буквой
+ * @param[in] c Символ для проверки
+ * @return true, если символ является русской буквой (прописной или строчной, включая Ё/ё),
+ *         false в противном случае
+ */
 bool isRussianLetter(wchar_t c) {
     
     if ((c >= L'А' && c <= L'Я') || c == L'Ё') {
@@ -31,12 +53,29 @@ bool isRussianLetter(wchar_t c) {
     return false;
 }
 
+/**
+ * @brief Конструктор класса RouteCipher
+ * @details Инициализирует количество столбцов таблицы и проверяет корректность ключа
+ * @param[in] cols Количество столбцов таблицы
+ * @throw cipher_error Если количество столбцов меньше или равно 0
+ */
 RouteCipher::RouteCipher(int cols) : columns(cols) {
     if (cols <= 0) {
         throw cipher_error("Columns must be positive");
     }
 }
 
+/**
+ * @brief Метод для зашифрования текста
+ * @details Реализует алгоритм табличной маршрутной перестановки:
+ *          1. Удаление пробелов и преобразование к прописным буквам
+ *          2. Заполнение таблицы по горизонтали слева направо, сверху вниз
+ *          3. Чтение таблицы по маршруту: сверху вниз, справа налево
+ * @param[in] text Текст для зашифрования
+ * @return Зашифрованная строка
+ * @throw cipher_error Если текст пустой, не содержит русских букв или содержит
+ *                     недопустимые символы
+ */
 std::wstring RouteCipher::encrypt(const std::wstring& text) {
     if (text.empty()) {
         return L"";
@@ -114,6 +153,16 @@ std::wstring RouteCipher::encrypt(const std::wstring& text) {
     return result;
 }
 
+/**
+ * @brief Метод для расшифрования текста
+ * @details Реализует обратный алгоритм табличной маршрутной перестановки:
+ *          1. Заполнение таблицы зашифрованным текстом по маршруту чтения
+ *          2. Чтение таблицы по строкам слева направо
+ * @param[in] cipherText Зашифрованный текст
+ * @return Расшифрованная строка
+ * @throw cipher_error Если зашифрованный текст пустой, содержит недопустимые символы
+ *                     или возникла ошибка при расшифровании
+ */
 std::wstring RouteCipher::decrypt(const std::wstring& cipherText) {
     if (cipherText.empty()) {
         return L"";
